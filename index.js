@@ -40,7 +40,8 @@ function getDataFromSignUp() {
         }
         usersList.push(user);
         console.log(usersList);
-        localStorage.setItem("usersList", JSON.stringify(usersList))
+        localStorage.setItem("usersList", JSON.stringify(usersList));
+        clear();
         if (fail.classList.contains("d-block")) {
             fail.classList.replace("d-block", "d-none");
         }
@@ -60,9 +61,10 @@ function getDataFromLogIn() {
         for (let index = 0; index < usersList.length; index++) {
             if (UserEmail_login.value === usersList[index].UserEmail && password_login.value === usersList[index].password) {
                 location.href = "home.html";
+                clear();
                 sessionStorage.setItem("name", usersList[index].UserName)
-                console.log(usersList[index].UserName);
-                namee()
+                // console.log(usersList[index].UserName);
+                // namee()
                 // console.log(usersList[index]);
                 var x = true
                 return x;
@@ -87,4 +89,9 @@ function getDataFromLogIn() {
 // document.querySelector(".homeCard").innerHTML = `<p class="mb-0">Welcome 11 ${JSON.parse(localStorage.getItem("usersList"))[index].UserName}</p>`
 function namee() {
     document.querySelector(".homeCard").innerHTML = `<p class="mb-0">Welcome ${sessionStorage.getItem("name")}</p>`
+}
+function clear() {
+    UserName.value = ""
+    UserEmail.value = ""
+    password.value = ""
 }

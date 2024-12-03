@@ -40,9 +40,6 @@
 
     <div class="vh-100 d-flex justify-content-center align-items-center">
         <div class="p-5 mt-5 text-center col-7 homeCard">
-            <!-- <script>
-                document.querySelector(".homeCard").innerHTML = `<p class="mb-0">Welcome ${sessionStorage.getItem("name")}</p>`
-            </script> -->
         </div>
     </div>
 
@@ -51,6 +48,9 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script src="index.js"></script>
+    <script>
+        document.querySelector(".homeCard").innerHTML = `<p class="mb-0">Welcome ${sessionStorage.getItem("name")}</p>`
+    </script>
 </body>
 
 </html>
