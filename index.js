@@ -26,8 +26,8 @@ SignupButton?.addEventListener("click", () => {
     getDataFromSignUp();
 })
 var usersList = [];
-if (usersList.length == 0) {
-    usersList = JSON.parse(localStorage.getItem("usersList"))
+if (localStorage.getItem("usersList") != null) {
+    var usersList = JSON.parse(localStorage.getItem("usersList"));
 }
 
 
