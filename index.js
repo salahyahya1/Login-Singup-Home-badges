@@ -18,6 +18,12 @@ LogoutButton?.addEventListener("click", () => {
     location.href = "index.html";
 })
 
+document?.addEventListener("keyup", (e) => {
+    if (e.key == "Enter") {
+        loginButton?.click();
+        SignupButton?.click();
+    }
+})
 loginButton?.addEventListener("click", () => {
     getDataFromLogIn();
 })
@@ -86,10 +92,8 @@ function getDataFromLogIn() {
     }
 
 }
-// document.querySelector(".homeCard").innerHTML = `<p class="mb-0">Welcome 11 ${JSON.parse(localStorage.getItem("usersList"))[index].UserName}</p>`
 function namee() {
     document.querySelector(".homeCard").innerHTML = `<p class="mb-0">Welcome ${sessionStorage.getItem("name")}</p>`
-    // document.querySelector(".homeCard").innerHTML = `<p class="mb-0">Welcome ${sessionStorage.getItem("name")}</p>`
 }
 function clear() {
     UserName.value = ""
