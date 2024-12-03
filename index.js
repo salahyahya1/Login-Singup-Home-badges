@@ -26,7 +26,7 @@ SignupButton?.addEventListener("click", () => {
     getDataFromSignUp();
 })
 var usersList = [];
-if (usersList == "") {
+if (usersList.length == 0) {
     usersList = JSON.parse(localStorage.getItem("usersList"))
 }
 
@@ -61,11 +61,11 @@ function getDataFromLogIn() {
         for (let index = 0; index < usersList?.length; index++) {
             if (UserEmail_login.value === usersList[index].UserEmail && password_login.value === usersList[index].password) {
                 location.href = "home.html";
-                clear();
                 sessionStorage.setItem("name", usersList[index].UserName)
-                // console.log(usersList[index].UserName);
+                console.log(usersList[index].UserName);
                 // namee()
                 // console.log(usersList[index]);
+                clear();
                 var x = true
                 return x;
             }
@@ -89,6 +89,7 @@ function getDataFromLogIn() {
 // document.querySelector(".homeCard").innerHTML = `<p class="mb-0">Welcome 11 ${JSON.parse(localStorage.getItem("usersList"))[index].UserName}</p>`
 function namee() {
     document.querySelector(".homeCard").innerHTML = `<p class="mb-0">Welcome ${sessionStorage.getItem("name")}</p>`
+    // document.querySelector(".homeCard").innerHTML = `<p class="mb-0">Welcome ${sessionStorage.getItem("name")}</p>`
 }
 function clear() {
     UserName.value = ""
