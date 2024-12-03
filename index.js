@@ -58,7 +58,7 @@ function getDataFromSignUp() {
 
 function getDataFromLogIn() {
     if ((UserEmail_login.value && password_login.value) !== "") {
-        for (let index = 0; index < usersList.length; index++) {
+        for (let index = 0; index < usersList?.length; index++) {
             if (UserEmail_login.value === usersList[index].UserEmail && password_login.value === usersList[index].password) {
                 location.href = "home.html";
                 clear();
